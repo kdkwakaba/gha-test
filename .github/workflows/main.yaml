@@ -11,8 +11,6 @@ jobs:
         version: [10, 12, 14]
     steps:
       - name: Set output value
-        id: step_${{ matrix.version }}
-        run: echo "my-output=Version ${{ matrix.version }}" >> $GITHUB_OUTPUT
-
-      - name: Use output value
-        run: echo "The output for version ${{ matrix.version }} is ${{ steps['step_' + matrix.version].outputs.my-output }}"
+        uses: ./.github/workflows/test.yaml
+        with:
+          test1: "test ${{ matrix.version }}"
