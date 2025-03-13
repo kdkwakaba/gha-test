@@ -5,12 +5,9 @@ on:
 
 jobs:
   example_matrix:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
         version: [10, 12, 14]
-    steps:
-      - name: Set output value
-        uses: ./.github/workflows/test.yaml
-        with:
-          test1: "test ${{ matrix.version }}"
+    uses: ./.github/workflows/test.yaml
+    with:
+      test1: "test ${{ matrix.version }}"
