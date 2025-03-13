@@ -1,0 +1,16 @@
+name: workflow call test
+on:
+  workflow_call:
+    inputs:
+      test1:
+        type: string
+        required: false
+
+jobs:
+  test:
+    name: test job
+    runs-on: ubuntu-latest
+    steps:
+      - name: hogehoge
+        id: test
+        run: echo ${{ inputs.test1 }}
