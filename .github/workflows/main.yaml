@@ -4,10 +4,6 @@ on:
   push:
 
 jobs:
-  example_matrix:
-    strategy:
-      matrix:
-        version: [10, 12, 14]
+  testjob:
+    name: Test job
     uses: ./.github/workflows/test.yaml
-    with:
-      test1: "test ${{ matrix.version }}"
