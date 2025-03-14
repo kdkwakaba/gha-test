@@ -3,7 +3,7 @@ on:
   workflow_call:
     inputs:
       test1:
-        type: string
+        type: boolean
         required: false
 
 jobs:
@@ -12,5 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: hogehoge
-        id: test
         run: echo ${{ inputs.test1 }}
