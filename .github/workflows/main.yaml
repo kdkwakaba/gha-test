@@ -7,3 +7,5 @@ jobs:
   testjob:
     name: Test job
     uses: ./.github/workflows/test.yaml
+    with:
+      test1: true
