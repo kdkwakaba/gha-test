@@ -22,4 +22,4 @@ jobs:
           echo $VAR
           eval $VAR
           cat $GITHUB_OUTPUT
-          #echo "\"${VAR}=fugafuga\"" | tee >> $GITHUB_OUTPUT
+          echo "output3=fugafuga" >> $GITHUB_OUTPUT
