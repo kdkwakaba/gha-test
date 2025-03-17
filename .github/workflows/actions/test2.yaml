@@ -1,0 +1,10 @@
+name: Called Workflow2
+description: 'Greet someone'
+inputs:
+outputs:
+
+runs:
+  using: "composite"
+  steps:
+    - name: test2
+      run: echo 'test'
