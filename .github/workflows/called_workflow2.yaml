@@ -19,4 +19,4 @@ jobs:
         run: |
           echo "Hello from called workflow"
           VAR="output3"
-          echo "${VAR}=fugafuga" >> $GITHUB_OUTPUT
+          echo "${VAR}=fugafuga" | tee >> $GITHUB_OUTPUT
