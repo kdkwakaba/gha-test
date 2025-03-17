@@ -23,4 +23,4 @@ jobs:
           #eval $VAR
           #cat $GITHUB_OUTPUT
           FOO="output2"
-          echo "${FOO}=fugafuga" >> $GITHUB_OUTPUT
+          echo "${example_input}=fugafuga" >> $GITHUB_OUTPUT

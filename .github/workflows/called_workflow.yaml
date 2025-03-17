@@ -27,6 +27,11 @@ jobs:
 
   example-job2:
     uses: ./.github/workflows/called_workflow2.yaml
+    strategy:
+      matrix:
+        target:
+          - value: hogehoge
+          - value: fugafuga
     with:
-      example_input: "example value"
+      example_input: ${{ matrix.target.value }}
 
