@@ -14,13 +14,15 @@ on:
 jobs:
   example-job:
     runs-on: ubuntu-latest
+    env:
+      repository: kdkwakaba
     outputs:
       hogehoge: ${{ steps.hogehoge.outputs.hogehoge }}
       fugafuga: ${{ steps.hogehoge.outputs.fugafuga }}
     steps:
       - name: Add GITHUB_OUTPUT
         id: hogehoge
-        run: echo "${{ inputs.example_input }}=" >> $GITHUB_OUTPUT
+        run: echo "${{ inputs.example_input }}=${{ env.repository }}/${{ inputs.example_input }}" >> $GITHUB_OUTPUT
 
   #example-job2:
   #  uses: ./.github/workflows/called_workflow2.yaml
