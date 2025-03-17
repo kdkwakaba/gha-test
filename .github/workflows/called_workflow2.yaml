@@ -9,14 +9,14 @@ on:
       hogehoge:
         value: ${{ jobs.example-job3.outputs.hogehoge }}
       fugafuga:
-        value: "aaaa${{ jobs.example-job3.outputs.fugafuga }}"
+        value: ${{ jobs.example-job3.outputs.fugafuga }}
 
 jobs:
   example-job3:
     runs-on: ubuntu-latest
     outputs:
       hogehoge: ${{ steps.fugafuga.outputs.hogehoge }}
-      fugafuga: ${{ steps.fugafuga.outputs.fugafuga }}
+      fugafuga: "aaaaa${{ steps.fugafuga.outputs.fugafuga }}"
     steps:
       - name: task4
         id: fugafuga
