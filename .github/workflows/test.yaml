@@ -1,6 +1,13 @@
 name: workflow call test
 on:
   workflow_call:
+    inputs:
+      test:
+        type: string
+        required: true
+      test2:
+        type: string
+        required: true
 
 jobs:
   test:
@@ -9,4 +16,4 @@ jobs:
     steps:
       - name: hogehoge
         id: test1
-        run: echo "hogehoge=aabbcc" >> $GITHUB_OUTPUT
+        run: echo "hogehoge${{ inputs.test2 }}=${{ inputs.test }}" >> $GITHUB_OUTPUT
