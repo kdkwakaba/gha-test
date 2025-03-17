@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: test task
         run: echo test
-      
+
       - name: Output
         run: |
-          echo "output1:  ${{ needs.example-job1.outputs.output1 }}"
+          echo "output1:  ${{ needs.call-workflow1.example-job1.outputs.output1 }}"
           echo "output2:  ${{ needs.example-job3.outputs.output2 }}"
