@@ -19,5 +19,7 @@ jobs:
         run: |
           echo "Hello from called workflow"
           VAR="echo \"output3\"=fugafuga >> \$GITHUB_OUTPUT"
+          echo $VAR
           eval $VAR
+          cat $GITHUB_OUTPUT
           #echo "\"${VAR}=fugafuga\"" | tee >> $GITHUB_OUTPUT
