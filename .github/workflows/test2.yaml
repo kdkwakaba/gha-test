@@ -4,10 +4,11 @@ on:
 
 jobs:
   example-job:
+    name: test task2
     runs-on: ubuntu-latest
     steps:
-      - name: test task3
+      - name: test task2
         run: echo "output_value1=Hello from called workflow" >> $GITHUB_OUTPUT
 
-      - name: test task2
+      - name: test task3
         uses: ./.github/workflows/test3.yaml
