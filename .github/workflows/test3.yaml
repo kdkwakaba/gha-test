@@ -1,0 +1,11 @@
+name: Called Workflow
+on:
+  workflow_call:
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test task3
+        run: echo "output_value2=Hello from called workflow" >> $GITHUB_OUTPUT
+

@@ -1,11 +1,13 @@
-name: Caller Workflow
-on: [push]
+name: Called Workflow
+on:
+  workflow_call:
 
 jobs:
-  call-workflow:
+  example-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Call reusable workflow
-        uses: ./.github/workflows/test.yaml
-      - name: Use output from called workflow
-        run: echo "The output is ${{ needs.call-workflow.outputs.output_value }}"
+      - name: test task3
+        run: echo "output_value1=Hello from called workflow" >> $GITHUB_OUTPUT
+
+      - name: test task2
+        uses: ./.github/workflows/test3.yaml
