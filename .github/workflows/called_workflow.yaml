@@ -5,6 +5,12 @@ on:
       example_input:
         required: true
         type: string
+    outputs:
+      output1:
+        value: ${{ jobs.example-job1.outputs.output1 }}
+      output2:
+        value: ${{ jobs.example-job2.outputs.output2 }}
+
 jobs:
   example-job1:
     runs-on: ubuntu-latest
