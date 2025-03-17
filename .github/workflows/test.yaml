@@ -1,12 +1,16 @@
 name: Caller Workflow
-on: [push]
+on: 
+  push:
 
 jobs:
   call-workflow:
+    name: call workflow
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      #- name: Checkout
+      #  uses: actions/checkout@v4
+      - name: Exe ls
+        run: pwd; ls -la
 
       - name: Call reusable workflow
         uses: ./.github/workflows/test2.yaml
