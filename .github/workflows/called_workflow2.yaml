@@ -18,8 +18,9 @@ jobs:
         id: fugafuga
         run: |
           echo "Hello from called workflow"
-          VAR="echo \"output2=fugafuga\" >> \$GITHUB_OUTPUT"
-          echo $VAR
-          eval $VAR
-          cat $GITHUB_OUTPUT
-          #echo "output3=fugafuga" >> $GITHUB_OUTPUT
+          #VAR="echo \"output2=fugafuga\" >> \$GITHUB_OUTPUT"
+          #echo $VAR
+          #eval $VAR
+          #cat $GITHUB_OUTPUT
+          FOO="output2"
+          echo "${FOO}=fugafuga" >> $GITHUB_OUTPUT
