@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+      - name: hogehoge
+        run: echo 'hogehoge'
     
       - name: test output
         uses: ./.github/workflows/test.yaml
