@@ -6,8 +6,8 @@ on:
         required: true
         type: string
     outputs:
-      output2:
-        value: ${{ jobs.example-job3.outputs.output2 }}
+      output3:
+        value: ${{ jobs.example-job3.outputs.output3 }}
 jobs:
   example-job3:
     runs-on: ubuntu-latest
@@ -18,4 +18,5 @@ jobs:
         id: fugafuga
         run: |
           echo "Hello from called workflow"
-          echo "output2=fugafuga" >> $GITHUB_OUTPUT
+          VAR="3"
+          echo "output${VAR}=fugafuga" >> $GITHUB_OUTPUT
