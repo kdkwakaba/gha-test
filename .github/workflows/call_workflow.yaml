@@ -1,0 +1,8 @@
+name: Caller Workflow
+on: [push]
+jobs:
+  call-workflow:
+    uses: ./.github/workflows/called_workflow.yaml
+    with:
+      example_input: "example value"
+    
