@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Call reusable workflow
-        uses: ./.github/workflows/test.yml
+        uses: ./.github/workflows/test.yaml
       - name: Use output from called workflow
         run: echo "The output is ${{ needs.call-workflow.outputs.output_value }}"
