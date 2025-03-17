@@ -6,7 +6,7 @@ on:
         required: true
         type: string
 jobs:
-  example-job:
+  example-job1:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
