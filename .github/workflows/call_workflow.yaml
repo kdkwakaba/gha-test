@@ -16,5 +16,5 @@ jobs:
       
       - name: Output
         run: |
-          echo "output1:  ${{ needs.example-job1.outputs.output1 }}"
-          echo "output2:  ${{ needs.example-job3.outputs.output2 }}"
+          echo "output1:  ${{ needs.call-workflow1.outputs.output1 }}"
+          echo "output2:  ${{ needs.call-workflow1.outputs.output2 }}"
