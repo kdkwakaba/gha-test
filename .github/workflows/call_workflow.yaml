@@ -1,8 +1,20 @@
 name: Caller Workflow
 on: [push]
 jobs:
-  call-workflow:
+  call-workflow1:
     uses: ./.github/workflows/called_workflow.yaml
     with:
       example_input: "example value"
-    
+
+  echo:
+    name: test
+    needs: call-workflow1
+    runs-on: ubuntu-latest
+    steps:
+      - name: test task
+        run: echo test
+      
+      - name: Output
+        run: |
+          echo "output1:  ${{ needs.call-workflow1.outputs.output1 }}"
+          echo "output2:  ${{ needs.call-workflow1.outputs.output2 }}"

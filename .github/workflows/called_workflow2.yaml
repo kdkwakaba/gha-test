@@ -9,14 +9,6 @@ jobs:
   example-job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
       - run: |
           echo "Hello from called workflow"
-          echo "output1=hogehoge" >> $GITHUB_OUTPUT
-
-  example-job2:
-    uses: ./.github/workflows/called_workflow2.yaml
-    with:
-      example_input: "example value"
-
+          echo "output2=fugafuga" >> $GITHUB_OUTPUT
