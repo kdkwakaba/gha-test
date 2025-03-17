@@ -1,16 +1,14 @@
-name: workflow call test
+name: Called Workflow
 on:
   workflow_call:
-    inputs:
-      test:
-        type: string
-        required: true
+    outputs:
+      output_value:
+        description: 'An example output'
+        value: ${{ steps.step1.outputs.output_value }}
 
 jobs:
-  test:
-    name: test job
+  example-job:
     runs-on: ubuntu-latest
     steps:
-      - name: hogehoge
-        id: test1
-        run: echo "hogehoge=${{ inputs.test }}" >> $GITHUB_OUTPUT
+      - id: step1
+        run: echo "output_value=Hello from called workflow" >> $GITHUB_OUTPUT
