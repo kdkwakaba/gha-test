@@ -1,0 +1,25 @@
+name: Caller Workflow
+on: 
+  workflow_dispatch:
+
+jobs:
+  call-workflow:
+    name: call workflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+    
+      - name: Execute command
+        uses: ./.github/workflows/actions1
+
+  #output1:
+  #  name: output1
+  #  uses: ./test2.yaml
+
+  
+  #    - name: Use output from called workflow1
+  #      run: echo "The output is ${{ needs.call-workflow.outputs.output_value1 }}"
+
+  #    - name: Use output from called workflow
+  #      run: echo "The output is ${{ needs.call-workflow.outputs.output_value2 }}"

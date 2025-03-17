@@ -1,25 +1,36 @@
-name: Caller Workflow
-on: 
-  workflow_dispatch:
+name: Reusable workflow
+on:
+  workflow_call:
+    inputs:
+      example_input:
+        required: true
+        type: string
+    outputs:
+      hogehoge:
+        value: ${{ jobs.example-job.outputs.hogehoge }}
+      fugafuga:
+        value: ${{ jobs.example-job.outputs.fugafuga }}
 
 jobs:
-  call-workflow:
-    name: call workflow
+  example-job:
     runs-on: ubuntu-latest
+    outputs:
+      hogehoge: ${{ steps.hogehoge.outputs.hogehoge }}
+      fugafuga: ${{ steps.hogehoge.outputs.fugafuga }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-    
-      - name: Execute command
-        uses: ./.github/workflows/actions1
+      - name: Add GITHUB_OUTPUT
+        id: hogehoge
+        run: echo "${{ inputs.example_input }}=" >> $GITHUB_OUTPUT
 
-  #output1:
-  #  name: output1
-  #  uses: ./test2.yaml
+  #example-job2:
+  #  uses: ./.github/workflows/called_workflow2.yaml
+  #  strategy:
+  #    matrix:
+  #      target:
+  #        - value: hogehoge
+  #        - value: fugafuga
+  #    #max-parallel: 1
+  #  with:
+  #    example_input: ${{ matrix.target.value }}
 
-  
-  #    - name: Use output from called workflow1
-  #      run: echo "The output is ${{ needs.call-workflow.outputs.output_value1 }}"
 
-  #    - name: Use output from called workflow
-  #      run: echo "The output is ${{ needs.call-workflow.outputs.output_value2 }}"
