@@ -19,7 +19,7 @@ jobs:
     needs: call-workflow
     runs-on: ubuntu-latest
     steps:
-      - name: Output
+      - name: Output variables
         run: |
           echo "hogehoge:  ${{ needs.call-workflow.outputs.hogehoge }}"
           echo "fugafuga:  ${{ needs.call-workflow.outputs.fugafuga }}"
