@@ -8,10 +8,14 @@ on:
 jobs:
   example-job1:
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.hogehoge.outputs.output1 }}
     steps:
       - uses: actions/checkout@v4
 
-      - run: |
+      - name: test3
+        id: hogehoge
+        run: |
           echo "Hello from called workflow"
           echo "output1=hogehoge" >> $GITHUB_OUTPUT
 
