@@ -1,10 +1,6 @@
 name: workflow call test
 on:
   workflow_call:
-    inputs:
-      test1:
-        type: boolean
-        required: false
 
 jobs:
   test:
@@ -12,4 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: hogehoge
-        run: echo ${{ inputs.test1 }}
+        id: test1
+        run: echo "hogehoge=aabbcc" >> $GITHUB_OUTPUT
