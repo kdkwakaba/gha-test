@@ -6,13 +6,16 @@ on:
         required: true
         type: string
     outputs:
-      output3:
-        value: ${{ jobs.example-job3.outputs.output3 }}
+      hogehoge:
+        value: ${{ jobs.example-job3.outputs.hogehoge }}
+      fugafuga:
+        value: ${{ jobs.example-job3.outputs.fugafuga }}
 jobs:
   example-job3:
     runs-on: ubuntu-latest
     outputs:
-      output3: ${{ steps.fugafuga.outputs.output2 }}
+      hogehoge: ${{ steps.fugafuga.outputs.hogehoge }}
+      fugafuga: ${{ steps.fugafuga.outputs.fugafuga }}
     steps:
       - name: task4
         id: fugafuga

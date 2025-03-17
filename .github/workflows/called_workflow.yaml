@@ -8,8 +8,10 @@ on:
     outputs:
       output1:
         value: ${{ jobs.example-job1.outputs.output1 }}
-      output3:
-        value: ${{ jobs.example-job2.outputs.output3 }}
+      hogehoge:
+        value: ${{ jobs.example-job2.outputs.hogehoge }}
+      fugafuga:
+        value: ${{ jobs.example-job2.outputs.fugafuga }}
 
 jobs:
   example-job1:
@@ -32,6 +34,8 @@ jobs:
         target:
           - value: hogehoge
           - value: fugafuga
+      max-parallel: 1
     with:
       example_input: ${{ matrix.target.value }}
+
 
