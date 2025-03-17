@@ -6,6 +6,17 @@ jobs:
   test1:
     name: test job1
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        target:
+          - outname: test3
+          - outname: test4
     steps:
+      - name: checkout
+        uses: actions/checkout@v4
+    
+      - name: test output
+        uses: ./github/workflows/test.yaml
+    
       - name: test step1
         run: echo "${{ steps.id1.outputs.hogehoge }}"
