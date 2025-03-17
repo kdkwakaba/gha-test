@@ -14,9 +14,11 @@ on:
 jobs:
   example-job3:
     runs-on: ubuntu-latest
+    env:
+      testrepo: "kdkwakaba/${{ inputs.example_input }}"
     outputs:
       hogehoge: ${{ steps.fugafuga.outputs.hogehoge }}
-      fugafuga: "aaaaa${{ steps.fugafuga.outputs.fugafuga }}"
+      fugafuga: "${{ steps.fugafuga.outputs.fugafuga }}"
     steps:
       - name: task4
         id: fugafuga
@@ -27,4 +29,4 @@ jobs:
           #eval $VAR
           #cat $GITHUB_OUTPUT
           #FOO="output2"
-          echo "${{ inputs.example_input }}=${{ inputs.example_input }}" >> $GITHUB_OUTPUT
+          echo "${{ inputs.example_input }}=${{ env.testrepo }}" >> $GITHUB_OUTPUT
