@@ -25,5 +25,5 @@ jobs:
           #echo $VAR
           #eval $VAR
           #cat $GITHUB_OUTPUT
-          FOO="output2"
-          echo "${example_input}=fugafuga" >> $GITHUB_OUTPUT
+          #FOO="output2"
+          echo "${{ inputs.example_input }}=${{ inputs.example_input }}" >> $GITHUB_OUTPUT
