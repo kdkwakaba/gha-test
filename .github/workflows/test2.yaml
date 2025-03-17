@@ -1,21 +1,11 @@
-name: Test id
-on:
-  push:
+name: Caller Workflow
+on: [push]
 
 jobs:
-  test1:
-    name: test job1
+  call-workflow:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
-      - name: hogehoge
-        run: echo 'hogehoge'
-    
-      - name: test output
-        uses: ./.github/workflows/test.yaml
-        with:
-          test: 'testvalue'
-    
-      - name: test step1
-        run: echo "${{ steps.id1.outputs.hogehoge }}"
+      - name: Call reusable workflow
+        uses: ./.github/workflows/test.yml
+      - name: Use output from called workflow
+        run: echo "The output is ${{ needs.call-workflow.outputs.output_value }}"
