@@ -34,7 +34,7 @@ jobs:
         target:
           - value: hogehoge
           - value: fugafuga
-      max-parallel: 1
+      #max-parallel: 1
     with:
       example_input: ${{ matrix.target.value }}
 

@@ -9,7 +9,8 @@ on:
       hogehoge:
         value: ${{ jobs.example-job3.outputs.hogehoge }}
       fugafuga:
-        value: ${{ jobs.example-job3.outputs.fugafuga }}
+        value: aaaa${{ jobs.example-job3.outputs.fugafuga }}
+
 jobs:
   example-job3:
     runs-on: ubuntu-latest
