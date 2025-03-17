@@ -1,0 +1,11 @@
+name: Test id
+on:
+  push:
+
+jobs:
+  test1:
+    name: test job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: test step1
+        run: echo "${{ steps.id1.outputs.hogehoge }}"
