@@ -12,14 +12,14 @@ jobs:
   example-job3:
     runs-on: ubuntu-latest
     outputs:
-      output2: ${{ steps.fugafuga.outputs.output2 }}
+      output3: ${{ steps.fugafuga.outputs.output2 }}
     steps:
       - name: task4
         id: fugafuga
         run: |
           echo "Hello from called workflow"
-          VAR="echo \"output3=fugafuga\" >> \$GITHUB_OUTPUT"
+          VAR="echo \"output2=fugafuga\" >> \$GITHUB_OUTPUT"
           echo $VAR
           eval $VAR
           cat $GITHUB_OUTPUT
-          echo "output3=fugafuga" >> $GITHUB_OUTPUT
+          #echo "output3=fugafuga" >> $GITHUB_OUTPUT
