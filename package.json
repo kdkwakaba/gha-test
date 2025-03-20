@@ -1,0 +1,19 @@
+{
+  "name": "gha-test",
+  "version": "1.0.0",
+  "description": "This repository is a verify repository to learn GitHub Actions.",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdkwakaba/gha-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kdkwakaba/gha-test/issues"
+  },
+  "homepage": "https://github.com/kdkwakaba/gha-test#readme"
+}
