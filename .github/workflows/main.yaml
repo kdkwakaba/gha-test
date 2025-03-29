@@ -18,6 +18,8 @@ jobs:
     name: Output variables
     needs: call-workflow
     runs-on: ubuntu-latest
+    env:
+      ACTIONS_RUNNER_DEBUG: true
     steps:
       - name: Output variables
         run: |
