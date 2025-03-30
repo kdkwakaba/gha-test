@@ -1,0 +1,21 @@
+name: Verify GITHUB_ENV
+on:
+  push:
+
+jobs:
+  test-job1:
+    name: Store GITHUB_ENV
+    runs-on: ubuntu-latest
+    steps:
+      - name: Store GITHUB_ENV
+        run: echo "TEST_VAR=hogehoge" >> $GITHUB_ENV
+      
+      - name: Output GITHUB_ENV in same step
+        run: echo $TEST_VAR
+
+  test-job2:
+    name: Output GITHUB_ENV
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output GITHUB_ENV in different job
+        run: echo $TEST_VAR
