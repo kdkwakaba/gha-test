@@ -1,0 +1,12 @@
+name: Windows Test
+
+on:
+  push:
+
+jobs:
+  job1:
+    name: Execute job1
+    runs-on: self-hosted
+    steps:
+      - name: job1 echo
+        run: echo "job1!"
