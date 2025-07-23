@@ -8,5 +8,10 @@ jobs:
     name: Execute job1
     runs-on: self-hosted
     steps:
+      - name: Git clone
+        uses: actions/checkout@v4
+    
       - name: job1 echo
-        run: echo "job1!"
+        run: |
+          dir
+          echo "job1!"
