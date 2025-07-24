@@ -12,9 +12,7 @@ jobs:
         uses: actions/checkout@v4
     
       - name: job1 echo
+        shell: pwsh
         run: |
           dir
-          echo "job1!"
-          for /L %%i in (1,1,100000) do (
-            echo Loop %%i
-          )
+          for ($i = 1; $i -le 100000; $i++) { "Loop $i" }
