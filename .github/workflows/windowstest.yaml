@@ -11,7 +11,5 @@ jobs:
       - name: Git clone
         uses: actions/checkout@v4
     
-      - name: job1 echo
-        run: |
-          dir
-          for ($i = 1; $i -le 100000; $i++) { "Loop $i" }
+      - name: Build
+        run: dotnet build
