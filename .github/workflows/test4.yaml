@@ -7,6 +7,6 @@ jobs:
         run: echo "This is a test action!"
     
 on:
-  push:
+  workflow_dispatch:
 
 name: Test4 job
