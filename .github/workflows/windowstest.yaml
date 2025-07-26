@@ -22,3 +22,16 @@ jobs:
             bin/
             obj/
           retention-days: 30
+
+  job2:
+    name: Download and Run
+    runs-on: self-hosted
+    needs: job1
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+
+      - name: Run application
+        run: dotnet run --project gha-test.csproj
