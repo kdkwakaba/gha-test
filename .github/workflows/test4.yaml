@@ -4,7 +4,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test step
-        run: echo "This is a test action!"
+        run: |
+          echo "HOGE=~/.kube/config" >> $GITHUB_OUTPUT
+          echo $GITHUB_OUTPUT
+          echo $HOGE
     
 on:
   workflow_dispatch:
